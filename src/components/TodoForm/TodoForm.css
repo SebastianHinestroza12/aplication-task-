@@ -1,6 +1,11 @@
 
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 form {
-  position: static;
+  position: absolute;
   width: 90%;
   max-width: 300px;
   background-color: rgb(8, 8, 8);
