@@ -5,7 +5,6 @@ html {
 }
 
 form {
-  position: fixed;
   width: 90%;
   max-width: 300px;
   background-color: rgb(8, 8, 8);
