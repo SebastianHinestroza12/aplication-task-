@@ -1,17 +1,17 @@
-import React from 'react';
+import { useState} from 'react';
 import { useLocalStorage } from './useLocalStorage';
 
-const TodoContext = React.createContext();
 
-function TodoProvider(props) {
+function useTodos() {
   const {
     item: todos,
     saveItem: saveTodos,
     loading,
     error,
   } = useLocalStorage('TODOS_V1', []);
-  const [searchValue, setSearchValue] = React.useState('');
-  const [openModal, setOpenModal] = React.useState(false);
+
+  const [searchValue, setSearchValue] = useState('');
+  const [openModal, setOpenModal] = useState(false);
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -36,14 +36,20 @@ function TodoProvider(props) {
     });
     saveTodos(newTodos);
   };
-
+  // Completar Tarea
   const completeTodo = (text) => {
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos];
     newTodos[todoIndex].completed = true;
     saveTodos(newTodos);
   };
-
+    // Eliminar Tarea
+  /**
+   * Toma un argumento de texto, encuentra el índice de la tarea pendiente con ese texto, crea una
+   * nueva matriz con todas las tareas pendientes, elimina la tarea pendiente en el índice y guarda la
+   * nueva matriz.
+   * @param text - El texto de la tarea a eliminar
+   */
   const deleteTodo = (text) => {
     const todoIndex = todos.findIndex(todo => todo.text === text);
     const newTodos = [...todos];
@@ -51,8 +57,7 @@ function TodoProvider(props) {
     saveTodos(newTodos);
   };
   
-  return (
-    <TodoContext.Provider value={{
+  return {
       loading,
       error,
       totalTodos,
@@ -65,10 +70,7 @@ function TodoProvider(props) {
       deleteTodo,
       openModal,
       setOpenModal,
-    }}>
-      {props.children}
-    </TodoContext.Provider>
-  );
-}
+    }
+};
 
-export { TodoContext, TodoProvider };
+export { useTodos};

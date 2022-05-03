@@ -1,7 +1,7 @@
 import React from "react";
 import './Cargar.css';
 
-function Cargar() { 
+function Loading() { 
   return (
     <div className="dots">
     <div></div>
@@ -11,4 +11,4 @@ function Cargar() {
   )
 };
 
-export { Cargar };
+export { Loading};
