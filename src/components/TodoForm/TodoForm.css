@@ -1,20 +1,22 @@
 
 form {
+  position: static;
   width: 90%;
   max-width: 300px;
-  background-color: #fff;
+  background-color: rgb(8, 8, 8);
   padding: 33px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-radius: 28px;
 }
 
 label {
   text-align: center;
   font-weight: bold;
   font-size: 20px;
-  color: #1E1E1F;
+  color: #fafafd;
   margin-bottom: 26px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -23,13 +25,13 @@ textarea {
   background-color: #F9FBFC;
   border: 2px solid #202329;
   border-radius: 2px;
-  box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
   color: #1E1E1F;
   font-size: 20px;
   text-align: center;
   padding: 12px;
   height: 96px;
   width: calc(100% - 25px);
+  border-radius:14px;
   
 }
 
@@ -55,7 +57,7 @@ textarea:focus {
   cursor: pointer;
   display: inline-block;
   font-size: 20px;
-  color: #202329;
+  color: #020202;
   font-weight: 400;
   width: 120px;
   height: 48px;
