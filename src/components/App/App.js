@@ -73,14 +73,16 @@ function App() {
       
       />
 
-      {!!openModal && (
+      {
+        !!openModal && (
         <Modal>
           <TodoForm
             addTodo={addTodo}
             setOpenModal = {setOpenModal}
           />
         </Modal>
-      )}
+        )
+      }
 
       <CreateTodoButton
         setOpenModal={setOpenModal}

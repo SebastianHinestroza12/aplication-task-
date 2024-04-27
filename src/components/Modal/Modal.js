@@ -1,12 +1,10 @@
 import React from 'react';
 import './Modal.css';
 
-function Modal({ children }) {
+export function Modal({ children }) {
   return (
-    <div className="ModalBackground">
+    <div className="container-modal">
       {children}
     </div>
   );
 }
-
-export { Modal };
