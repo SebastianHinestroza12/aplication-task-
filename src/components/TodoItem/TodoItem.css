@@ -2,7 +2,6 @@
 
 .TodoItem {
   background: linear-gradient(35deg, black, rgba(69, 7, 238, 0.486));
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,24 +29,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 48px;
-  width: 48px;
+  height: 3.5rem;
+  width: 3.5rem;
   font-size: 24px;
   font-weight: bold;
 }
 
-.Icon-check {
-  position: absolute;
-  left: -4px;
-}
 .Icon-check--active {
   color: #000000;
 }
 
-.Icon-delete {
-  position: absolute;
-  right: 0;
-}
 .Icon-delete:hover {
   color: red;
 }
